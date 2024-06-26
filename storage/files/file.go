@@ -23,7 +23,7 @@ func New(basePath string) Storage {
 }
 
 func (s Storage) Save(page *storage.Page) (err error) {
-	defer func() { err = e.Wrap("can't save", err) }()
+	defer func() { err = e.WrapIfErr("can't save", err) }()
 
 	fPath := filepath.Join(s.basePath, page.UserName)
 

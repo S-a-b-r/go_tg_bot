@@ -98,7 +98,6 @@ func newMessageSender(chatID int, tg *telegram.Client) func(string) error {
 	return func(msg string) error {
 		return tg.SendMessage(chatID, msg)
 	}
-
 }
 
 func isAddCmd(text string) bool {
